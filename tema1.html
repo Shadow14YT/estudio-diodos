@@ -1,0 +1,35 @@
+<h2>Tema 1: Flujo Real de Electrones y Mecánica de la Unión P-N</h2>
+
+<p>Físicamente, la corriente eléctrica es el <strong>movimiento ordenado de electrones libres</strong>. A diferencia del sentido convencional (que simula un movimiento de positivo a negativo), los electrones poseen carga negativa y son repelidos por el cátodo, viajando estrictamente en sentido real: <strong>de negativo a positivo</strong>.</p>
+
+<div class="info-card">
+    <h3>Dopaje y Comportamiento Interno</h3>
+    <ul>
+        <li><strong>Material Tipo N (Cátodo):</strong> Semiconductor dopado con impurezas pentavalentes (como el Fósforo). Posee un exceso de electrones libres en la Banda de Conducción (portadores mayoritarios).</li>
+        <li><strong>Material Tipo P (Ánodo):</strong> Semiconductor dopado con impurezas trivalentes (como el Boro). Carece de electrones, generando "vacantes térmicas" o huecos en la Banda de Valencia.</li>
+    </ul>
+</div>
+
+<p>Al unirse ambos cristales, los electrones libres de la zona N cruzan por difusión hacia la zona P para rellenar los huecos contiguos (recombinación). Este proceso autolimitado deja iones cargados en la frontera, construyendo la <strong>Zona de Agotamiento o Carga Espacial</strong>, la cual levanta una barrera electrostática interna ($V_0 \approx 0.7\text{V}$ en Silicio).</p>
+
+<div class="sandbox-container">
+    <h3>Simulador Dinámico de Polarización</h3>
+    <p>Modifica el estado del circuito. Al activar la polarización directa (aplicando un voltaje externo $> 0.7\text{V}$), estrecharás la zona de carga espacial permitiendo un flujo masivo continuo de electrones.</p>
+    
+    <button class="btn-action" onclick="document.getElementById('circuito').classList.toggle('activo')">Ajustar Polarización</button>
+    
+    <div id="circuito" class="sandbox">
+        <div class="barrera-visual"></div>
+        <div class="electron" style="animation-delay: 0s; top: 30%;"></div>
+        <div class="electron" style="animation-delay: 0.6s; top: 50%;"></div>
+        <div class="electron" style="animation-delay: 1.2s; top: 70%;"></div>
+        <div class="electron" style="animation-delay: 1.8s; top: 45%;"></div>
+    </div>
+</div>
+
+<h3>Variaciones Avanzadas según la Unión:</h3>
+<ul>
+    <li><strong>Diodo Rectificador Común:</strong> Unión P-N clásica de silicio. Conmutación estándar orientada al manejo de potencia alterna.</li>
+    <li><strong>Diodo Schottky:</strong> Reemplaza el semiconductor P por un metal conductor. Al eliminar la recombinación de huecos, la barrera cae a $0.3\text{V}$, eliminando el tiempo de recuperación inversa y permitiendo conmutar a frecuencias de Megahertz.</li>
+    <li><strong>Diodo Túnel:</strong> Nivel de dopaje extremadamente alto (1000 veces superior). La zona de vaciamiento es tan delgada ($< 10\text{ nm}$) que los electrones rompen las barreras clásicas mediante el <em>Efecto Túnel Cuántico</em>, transportándose de forma casi instantánea.</li>
+</ul>

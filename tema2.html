@@ -1,0 +1,33 @@
+<h2>Tema 2: Potencia Eléctrica, Pérdidas y Disipación Térmica</h2>
+
+<p>La potencia eléctrica ($P$) determina la tasa de transferencia energética por unidad de tiempo. En cualquier elemento electrónico se define bajo la ley universal: <strong>P = V · I</strong>.</p>
+
+<p>En un diodo ideal, no hay pérdidas. Sin embargo, en un diodo real, el paso del flujo electrónico a través de la resistencia interna y la barrera de potencial genera una caída de voltaje fija ($V_F$). Esto se traduce en <strong>Pérdidas por Conducción</strong> inevitables:</p>
+
+<div class="formula-box">
+    <code>P_disipada = V_F &middot; I_F</code>
+</div>
+
+<div class="info-card">
+    <h3>Análisis de Eficiencia Energética</h3>
+    <p>Ajusta el slider de corriente para observar cuánta potencia eléctrica absorbe el dispositivo y transforma directamente en <strong>Energía Térmica (Calor)</strong>. Un exceso de potencia elevará la temperatura de la unión hacia su límite destructivo ($150^\circ\text{C}$).</p>
+    
+    <label>Corriente Directa de Operación ($I_F$):</label>
+    <input type="range" id="sliderCorriente" min="0" max="10" step="0.2" value="0">
+    
+    <p>Caída de Tensión Base ($V_F$): <strong>0.7 V (Silicio Standard)</strong></p>
+    <p>Corriente de Carga: <span id="valCorriente" style="color:var(--accent-cyan); font-weight:bold;">0 A</span></p>
+    <p>Potencia Transformada en Calor: <span id="valPotencia" style="color:var(--accent-red); font-weight:bold;">0 W</span></p>
+    
+    <div class="barra-potencia">
+        <div id="progresoCalor" class="progreso"></div>
+    </div>
+</div>
+
+<h3>Ingeniería de Gestión Térmica</h3>
+<p>Para evitar el <strong>embalamiento térmico</strong> (donde el calor disminuye la resistencia, aumentando la corriente en un bucle destructivo), los ingenieros implementan sistemas de disipación basados en la Ley de Ohm Térmica ($T_J - T_A = P \cdot R_{\theta JA}$):</p>
+<ul>
+    <li><strong>Planos de Cobre extendidos:</strong> Actúan como radiadores térmicos pasivos sobre el circuito impreso (PCB).</li>
+    <li><strong>Vías Térmicas (Thermal Vias):</strong> Conductores internos que transfieren el calor acumulado hacia las capas inferiores de la placa.</li>
+    <li><strong>Disipadores de Aluminio y Pasta Térmica:</strong> Reducen drásticamente la resistencia térmica de la unión al ambiente.</li>
+</ul>

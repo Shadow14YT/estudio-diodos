@@ -1,0 +1,238 @@
+:root {
+    --bg-main: #0a0f1d;
+    --bg-card: #131a30;
+    --accent-cyan: #00f0ff;
+    --accent-neon-green: #39ff14;
+    --accent-red: #ff0055;
+    --text-primary: #f0f4f8;
+    --text-secondary: #8a99ad;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: rgba(0, 240, 255, 0.05);
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+nav button:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Tipografía del Contenido */
+h2 {
+    color: var(--accent-cyan);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent-cyan);
+    padding-left: 10px;
+}
+
+h3 {
+    color: #fff;
+    margin: 25px 0 10px 0;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #fff;
+}
+
+/* Tarjetas Informativas */
+.info-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Área de Simulación Interactiva */
+.sandbox-container {
+    background: #05070f;
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.sandbox {
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    background: #020408;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+/* Barrera de potencial visual */
+.barrera-visual {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--accent-red);
+    box-shadow: 0 0 10px var(--accent-red);
+    transition: all 0.5s ease;
+}
+
+.activo .barrera-visual {
+    background: var(--accent-neon-green);
+    box-shadow: 0 0 10px var(--accent-neon-green);
+    opacity: 0.3;
+}
+
+.electron {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-cyan);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+@keyframes fluir {
+    0% { left: 5%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 95%; opacity: 0; }
+}
+
+.activo .electron {
+    animation: fluir 2.5s linear infinite;
+}
+
+/* Controles de Simulación */
+.btn-action {
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.activo .btn-action {
+    background: var(--accent-neon-green);
+    color: #000;
+}
+
+/* Contenedor de Fórmulas Cúanticas */
+.formula-box {
+    text-align: center;
+    margin: 25px 0;
+    background: #05070f;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.formula-box code {
+    font-size: 1.4rem;
+    color: var(--accent-cyan);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Elementos de control deslizantes */
+input[type="range"] {
+    width: 100%;
+    margin: 15px 0;
+    accent-color: var(--accent-cyan);
+}
+
+.barra-potencia {
+    background: #1e293b;
+    border-radius: 6px;
+    height: 25px;
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+
+.progreso {
+    background: linear-gradient(90deg, var(--accent-neon-green), var(--accent-red));
+    height: 100%;
+    width: 0%;
+    transition: width 0.2s ease;
+}
